@@ -19,8 +19,8 @@ This project is divided in the following key sections:
 - Model Loading and Saving Library: Pickle
 - Web App and Data Visualization: Flask, Plotly
 
-# Git URL
-https://github.com/dngamage/disaster-response-pipeline/new/main?readme=1
+# Project Git URL
+https://github.com/dngamage/disaster-response-pipeline
 
 # Executing Program
 1. can run the following commands in the project's directory to set up the database, train model and save the model.
