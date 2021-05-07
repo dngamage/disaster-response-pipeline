@@ -55,7 +55,7 @@ app/templates/*: templates/html files for web app
 - [Udacity](https://www.udacity.com//) for providing an amazing Data Science Nanodegree Program with proper training
 - [Figure Eight](https://appen.com/) for providing the relevant dataset to train the model
 
-# Screenshots
+# Screenshots 
 
 ![Home](/screenshots/01.png?raw=true "Home")
 ![Home](/screenshots/02.png?raw=true "Home")
