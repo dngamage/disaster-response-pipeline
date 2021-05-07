@@ -9,6 +9,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from flask import Flask
 from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
+from plotly.graph_objs import Pie
 import joblib
 from sqlalchemy import create_engine
 
@@ -48,7 +49,7 @@ def tokenize(text):
 
 # load data
 engine = create_engine('sqlite:///../data/disaster_response_db.db')
-df = pd.read_sql_table('db_disaster_response_table', engine)
+df = pd.read_sql_table('disaster_response_db_table', engine)
 
 # load model
 model = joblib.load("../models/classifier.pkl")
@@ -68,14 +69,22 @@ def index():
 
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
+    customscale = [[0, "rgb(160, 50, 30)"],
+                   [0.1, "rgb(255, 40, 0)"],
+                   [0.9, "rgb(200, 50, 0)"],
+                   [1.0, "rgb(100, 0, 255)"]]
     graphs = [
         # GRAPH 1 - genre graph
         {
+
             'data': [
                 Bar(
                     x=genre_names,
-                    y=genre_counts
+                    y=genre_counts,
+                    #marker = dict(color=genre_counts,colorscale='viridis')
+                    marker = dict(color=genre_counts,colorscale=customscale)
                 )
+
             ],
 
             'layout': {
@@ -86,26 +95,30 @@ def index():
                 'xaxis': {
                     'title': "Genre"
                 }
+
             }
         },
+
         # GRAPH 2 - category graph
         {
             'data': [
                 Bar(
                     x=category_names,
-                    y=category_boolean
+                    y=category_boolean,
+                    marker = dict(color=category_boolean,colorscale='viridis')
                 )
             ],
 
             'layout': {
                 'title': 'Distribution of Message Categories',
                 'yaxis': {
-                    'title': "Count"
+                    'title': "Cout"
                 },
                 'xaxis': {
                     'title': "Category",
                     'tickangle': 35
                 }
+
             }
         }
     ]
@@ -137,7 +150,7 @@ def go():
 
 
 def main():
-    #app.run(host='0.0.0.0', port=3001, debug=True)
+    # app.run(host='0.0.0.0', port=3001, debug=True)
     app.run(host='127.0.0.1', port=3001, debug=True)
 
 
