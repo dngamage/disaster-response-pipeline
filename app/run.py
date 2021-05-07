@@ -12,7 +12,8 @@ from plotly.graph_objs import Bar
 from plotly.graph_objs import Pie
 import joblib
 from sqlalchemy import create_engine
-
+nltk.download(['punkt', 'wordnet'])
+from nltk.corpus import stopwords
 app = Flask(__name__)
 
 
@@ -73,6 +74,18 @@ def index():
                    [0.1, "rgb(255, 40, 0)"],
                    [0.9, "rgb(200, 50, 0)"],
                    [1.0, "rgb(100, 0, 255)"]]
+    # top words
+    # category top 10 prep
+    category_counts = df.iloc[:, 4:].sum(axis=0).sort_values(ascending=False)
+    category_top = category_counts.head(10)
+    category_names = list(category_top.index)
+
+    # category frequencies prep
+    labels = df.iloc[:, 4:].sum().sort_values(ascending=False).reset_index()
+    labels.columns = ['category', 'count']
+    label_values = labels['count'].values.tolist()
+    label_names = labels['category'].values.tolist()
+
     graphs = [
         # GRAPH 1 - genre graph
         {
@@ -119,6 +132,44 @@ def index():
                     'tickangle': 35
                 }
 
+            }
+        },
+        # GRAPH 3 - Most Frequent Words
+        {
+            'data': [
+                Bar(
+                    x=category_names,
+                    y=category_top
+                )
+            ],
+
+            'layout': {
+                'title': 'Top 10 Message Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Category"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=label_names,
+                    y=label_values,
+                    marker=dict(color=category_boolean, colorscale='viridis')
+                )
+            ],
+
+            'layout': {
+                'title': "Messages categories frequency",
+                'yaxis': {
+                    'title': "Message Category Frequency"
+                },
+                'xaxis': {
+                    'title': "Categories"
+                }
             }
         }
     ]
