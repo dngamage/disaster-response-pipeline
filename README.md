@@ -31,13 +31,13 @@ https://github.com/dngamage/disaster-response-pipeline
 
     - To run ETL pipeline to clean data and store the processed data in the database python 
     
-           process_data.py  data/disaster_messages.csv  data/disaster_categories.csv  data/disaster_response_db.db
+           python process_data.py  data/disaster_messages.csv  data/disaster_categories.csv  data/disaster_response_db.db
     - To run the ML pipeline that loads data from DB, trains classifier and saves the classifier as a pickle file python 
     
-           train_classifier.py  data/disaster_response_db.db  models/classifier.pkl
+           python train_classifier.py  data/disaster_response_db.db  models/classifier.pkl
 2. Run the following command in the app's directory to run your web app. 
 
-          python run.py
+          python python run.py
 
 3. Go to http://0.0.0.0:3001/
    If you are running local machin then use http://127.0.0.1:3001/
