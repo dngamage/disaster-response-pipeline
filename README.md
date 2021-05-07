@@ -59,10 +59,12 @@ app/templates/*: templates/html files for web app
 
 # Screenshots 
 
-![Home](/screenshots/01.png?raw=true "Home")
-![Home](/screenshots/02.png?raw=true "Home")
-![Home](/screenshots/03.png?raw=true "Home")
-![Home](/screenshots/04.png?raw=true "Home")
-![Home](/screenshots/06.png?raw=true "Home")
-![Home](/screenshots/07.png?raw=true "Home")
+![Home](/screenshots/01.png?raw=true "")
+![Home](/screenshots/02.png?raw=true "")
+![Home](/screenshots/03.png?raw=true "")
+![Home](/screenshots/07.png?raw=true "")
+![Home](/screenshots/08.png?raw=true "")
+![Home](/screenshots/04.png?raw=true "")
+![Home](/screenshots/06.png?raw=true "")
+
 ![Home](/screenshots/05.png?raw=true "Home")
