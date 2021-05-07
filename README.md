@@ -37,7 +37,7 @@ https://github.com/dngamage/disaster-response-pipeline
            python train_classifier.py  data/disaster_response_db.db  models/classifier.pkl
 2. Run the following command in the app's directory to run your web app. 
 
-          python python run.py
+           python run.py
 
 3. Go to http://0.0.0.0:3001/
    If you are running local machin then use http://127.0.0.1:3001/
