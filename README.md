@@ -5,6 +5,8 @@
 ## Description
 This Project is part of Data Science Nanodegree Program conducted by Udacity in collaboration with **Figure Eight**. The dataset contains pre-labelled tweets and messages from real-life disaster events. The project aim is to build a Natural Language Processing (NLP) model to categorize messages on a real time basis.
 
+The best performing machine learning model will be deployed as a web app where the user can test their own tentative messages to see how they would be classified with the models I selected and trained. Through the web app the user can also consult visualizations of the clean and transformed data.
+
 This project is divided in the following key sections:
 
 - Processing data, building an ETL pipeline to extract data from source, clean the data and save them in a SQLite DB
