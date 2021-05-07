@@ -66,5 +66,9 @@ app/templates/*: templates/html files for web app
 ![Home](/screenshots/08.png?raw=true "")
 ![Home](/screenshots/04.png?raw=true "")
 ![Home](/screenshots/06.png?raw=true "")
+![Home](/screenshots/05.png?raw=true "")
 
-![Home](/screenshots/05.png?raw=true "Home")
+### From Udacity Server
+![Home](/screenshots/09.png?raw=true "")
+![Home](/screenshots/10.png?raw=true "")
+
