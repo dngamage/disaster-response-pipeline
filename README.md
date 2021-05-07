@@ -56,3 +56,5 @@ app/templates/*: templates/html files for web app
 - [Figure Eight](https://appen.com/) for providing the relevant dataset to train the model
 
 # Screenshots
+
+![Home](/screenshots/01.png?raw=true "Title")
